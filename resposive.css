@@ -1,0 +1,1029 @@
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Space Grotesk", sans-serif;
+    scroll-behavior:smooth;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.navber{
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navber>.h2{
+    font-size: 2vw;
+    font-weight: 800;
+    padding: 0 5vw;
+}
+
+.icon{
+    padding: 0 4vw;
+    display: none;
+    color: #385a64;
+    font-weight: 700;
+    /* transition: .8s; */
+}
+
+.icon:hover{
+    color: #d268cc;
+}
+
+.navItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    padding: 0 4vw;
+}
+
+.navItem ul{
+    display: flex;
+    gap: 4vw;
+    align-items: center;
+    justify-content: center;
+    color: #385a64;
+}
+
+
+.navItem ul li{
+    list-style: none;
+    position: relative;
+}
+
+
+
+.navItem ul li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-bottom: 1px solid #d15bcb;
+    transition: .3s;
+    z-index: -1;
+}
+
+
+.navItem ul li:hover::before{
+    width: 100%;
+}
+
+
+
+
+.navItem ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1vw;
+    color: #385a64;
+    transition: .4s;
+}
+
+.navItem ul li a:hover{
+    color: #d15bcb;
+}
+
+.navber button{
+    padding: .8vw 2vw;
+    border: none;
+    border-radius: 9px;
+    background-color: #385a64;
+    color: white;
+    cursor: pointer;
+}
+
+.content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.left, .right{
+    width: 50%;
+    /* background-color: red; */
+    padding: 10vh 5vw;
+}
+
+.left h1{
+    /* margin-top: 15vh; */
+    font-size: 3vw;
+    font-weight: 900;
+    margin-bottom: 2vh;
+    color: #385a64;
+    width: 97%;
+}
+
+.left h1>span{
+    color: #d268cc;
+}
+
+.left p{
+    font-size: 1vw;
+    width: 90%;
+    font-weight: 500;
+}
+
+.left .btn{
+    margin-top: 2vh;
+    padding: 1.2vh 2.6vw;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #d268cc;
+    font-size: 1vw;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #385a64;
+    transition: .8s;
+    z-index: -1;
+}
+
+.btn:hover{
+    color: white;
+}
+
+
+.btn:hover::before{
+    width: 100%;
+}
+
+
+
+.right img{
+    position: relative;
+    height: 80%;
+    width: 85%;
+}
+
+
+
+
+
+
+
+/* @media (max-width: 600px) {
+    .navber i{
+        display: block;
+        cursor: pointer;
+    }
+    .navber .h2{
+        font-size: 5.9vw;
+    }
+    .navber ul{
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        position: absolute;
+        left: 25%; 
+        top: -36vh;
+        transform: translate(-50%);
+        z-index: 1;
+        padding: 2rem 0;
+        gap: 3vh;
+        background-color: #d268cd6f;
+        animation: animate 1s both;
+
+    }
+
+    @keyframes animate {
+        from{
+            .navber ul{
+                margin-bottom: 0;
+            }
+
+        }
+        to{
+            margin-top: 35vh;
+        }
+    }
+
+
+    .navber ul li a{
+        font-size: 2.5vw;
+        font-size: 1.01em;
+        color: black;
+        position: relative;
+    }
+
+
+
+
+
+
+    .naveffect{
+        display: none;
+    }
+
+
+
+
+    .content{
+        flex-direction: column;
+        width: 100%;
+    }
+    .left, .right{
+        width: 100%;
+        height: 80%;
+        padding: 0;
+        margin-top: 3vh;
+    }
+    .left{
+        padding: 4vw;
+        width: 91%;
+    }
+    .right{
+        margin-bottom: 18vh;
+    }
+    .left p{
+        position: relative;
+        font-size: 3vw;
+        width: 98%;
+    }
+
+    .left h1{
+        font-size: 7vw;
+    }
+    .left .btn{
+        padding: .7vh 1.9vw;
+        font-size: 3vw;
+        border-radius: 5px;
+    }
+    ul i{
+        position: absolute;
+        top: 1.3vw;
+        left: 2vw;
+        font-size: 7vw;
+        font-weight: 900;
+
+        
+    }
+
+    
+
+} */
+
+
+
+
+
+
+
+.main2{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.aboutItem{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* justify-content: center; */
+}
+.aboutItem .h2{
+    color: #385a64;
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 3vh;
+}
+
+.skillItem{
+    position: relative;
+    height: 85vh;
+    width: 85%;
+    /* background-color: blue; */
+    margin-top: 4vh;
+    border: 2px solid #385a64;
+    border-radius: 8px;
+    padding: 1.3vh 1vw;
+
+}
+
+
+.skillItem::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #385a6412;
+    transition: .8s;
+    z-index: -1;
+}
+
+.skillItem:hover::before{
+    width: 100%;
+}
+
+
+
+
+#mt{
+    margin-top: 4vh;
+}
+
+.skillItem .h2{
+    font-size: 1vw;
+}
+
+.skills{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-bottom: 15vh;
+}
+
+.skills span{
+    font-size: 1vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 800;
+}
+
+.skillsPercent{
+    position: relative;
+    height: 1vh;
+    width: 85%;
+    /* background-color: #385a64; */
+    margin-left: 3vw;
+    border: 2px solid #d268cc;
+    cursor: pointer;
+}
+
+.skillsPercent::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #385a64;
+    transition: .8s;
+}
+
+.skillsPercent,:hover::before{
+    width: 100%;
+}
+
+.css{
+    width: 60%;
+}
+
+.js {
+    width: 30%;
+
+}
+
+.bootstrap {
+    width: 50%;
+}
+
+.tailwind {
+    width: 30%;
+}
+
+/* 
+@media (max-width:600px) {
+    .skillItem {
+        height: 70vh;
+    }
+    .skills{
+        margin-bottom: 12vh;
+    }
+    .aboutItem .h2{
+        font-size: 3.8vw;
+    }
+    .skills span{
+        font-size: 3.5vw;
+    }
+    .skillsPercent{
+        width: 60%;
+    }
+} */
+
+
+
+
+
+
+
+
+
+
+
+.main3{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #385a64a1;
+}
+
+
+.main3Item{
+    height: 88vh;
+    width: 73%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a616c;
+}
+
+.flexdiv{
+    height: 28vh;
+    width: 100%;
+    gap: 1vw;
+    display: flex;
+    margin-bottom: 53vh;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-around; */
+}
+
+.main3Same{
+    width: 20%;
+    height: 25vh;
+    background-color: #fff;
+    /* margin-left: 2vw; */
+    margin-top: 1.4vh;
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.main3Same i{
+    font-size: 3vw;
+    color: #d268cc;
+
+}
+
+.para2{
+    font-size: 1vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 1vh;
+}
+
+.para3{
+    font-size: .8vw;
+    text-align: center;
+    padding: 1vh 1.2vw;
+    color: black;
+    font-weight: 500;
+}
+
+
+
+
+
+
+.main3bottom{
+    position: relative;
+    height: 60vh;
+    width: 45%;
+    background-color: #d268cd6e;
+    position: absolute;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.main3bottom h1{
+    font-size: 2.8vw;
+    color: #31535d;
+    margin-top: 3.5vh;
+}
+
+.main3bottom input{
+    padding: 1.1vh .7vw;
+    width: 30vw;
+    font-size: .9vw;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+.main3bottom textarea{
+    padding: 7vh .7vw;
+    width: 30vw;
+    font-size: 1vw;
+    ;background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.main3bottom .Submit{
+    position: relative;
+    padding: 1.3vh 0;
+    width: 8vw;
+    background-color: transparent;
+    border: 2px solid #31535d;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1vw;
+    font-weight: 600;
+    z-index: 1;
+}
+
+
+
+
+.Submit::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #31535d;
+    transition: .8s;
+    z-index: -1;
+}
+
+.Submit:hover::before{
+    width: 100%;
+}
+
+
+
+/****************************************************** HELP SECITON DESING ***************************************/
+
+.help{
+    height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.helpTop, .helpBottom{
+    width: 70%;
+    height: 47%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.helpItem, .signup{
+    width: 100%;
+    height: 48%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup{
+    margin-top: .5vh;
+    justify-content: start;
+}
+
+.helpItem h1{
+    font-size: 2vw;
+    font-weight: 600;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.helpItem input{
+    width: 40%;
+    padding: 1.5vh 2.5vw;
+    border-radius: 3px;
+    border: 1.8px solid rgba(29, 29, 29, 0.356);
+    background-color: white;
+    box-shadow: 5px 5px 180px rgba(0, 0, 0, 0.432);
+    font-size: .8vw;
+    margin-top: 3vh;
+}
+
+.helpItem i{
+    position: absolute;
+    left: 34vw;
+    margin-top: 4vw;
+    font-size: .9vw;
+    font-weight: 900;
+
+}
+
+.signUpbtn{
+    height: 6vh;
+    width: 70%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 1vh;
+    
+}
+
+.signUpbtn p{
+    font-size: 1vw;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    margin-right: 10vw;
+}
+
+.signUpbtn button{
+    padding: .8vh 3.5vw;
+    border-radius: 3px;
+    border: none;
+    font-size: .8vw;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.signUpbtn button:nth-child(2){
+    background-color: #0067f7;
+    margin-right: 1.1vw;
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+    border: 1px solid #0067f7;
+    position: relative;
+    z-index: 1;
+}   
+
+.signUpbtn button:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: .5s;
+    z-index: -1;
+}
+
+.signUpbtn button:nth-child(2):hover{
+    color: black;
+}
+
+.signUpbtn button:nth-child(2):hover::before{
+    width: 100%;
+}
+
+
+
+
+.signUpbtn button:nth-child(3){
+    border: 1px solid #0067f7;
+    background-color: transparent;
+    color: #0067f7;
+    font-family: "Space Grotesk", sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.signUpbtn button:nth-child(3)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #0067f7;
+    transition: .5s;
+    z-index: -1;
+}
+
+.signUpbtn button:nth-child(3):hover{
+    color: black;
+}
+
+.signUpbtn button:nth-child(3):hover::before{
+    width: 100%;
+}
+
+
+.helpBottom{
+    height: 30vh;
+    justify-content: start;
+    align-items: start;
+    
+}
+
+.helpBottomItem{
+    padding: 2vh 11vw;
+    /* background-color: yellow; */
+    height: 100%;
+    width: 68.5%;
+}
+
+.helpBottomItem p{
+    font-size: 1vw;
+    font-weight: 600;
+}
+
+.productItem{
+    height: 80%;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.9vw;
+}
+
+.products{
+    width: 20%;
+    height: 8vw;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.products i{
+    font-size: 3vw;
+}
+.products p{
+    font-size: .77vw;
+    margin-top: .3vh;
+}
+
+
+
+
+/************************************** HELP section RESPOSIVENESS *********************************************/
+
+
+@media (max-width: 600px) {
+    .helpTop, .helpBottom{
+        width: 100%;
+    }
+    .helpItem h1{
+        font-size: 5.5vw;
+    }
+    .helpItem  input{
+        padding-left: 5vw;
+        height: .5vh;
+        width: 64vw;
+        margin-top: .8vh;
+        font-size: 2.6vw;
+     
+    }
+    .helpItem i{
+        font-size: 2.3vw;
+        top: 27px;
+        left: -33vw;
+    }
+
+    .signUpbtn {
+        width: 90%;
+    }
+    .signUpbtn p{
+        font-size: 3vw;
+        margin-right: 4vw;
+    }
+    .signUpbtn button{
+        /* padding: 1vh 8vw; */
+        width: 19vw;
+        font-size: 2.2vw;
+    }
+    .helpBottom{
+        height: 80%;
+    }
+    .helpBottomItem{
+        height: 100%;
+        padding: 0 4vw;
+        width: 100%;
+    }
+    .productItem{
+        flex-direction: column;
+        height: 100%;
+        gap: 1vh;
+        width: 100%;
+    }
+    .helpBottomItem p{
+        font-size: 5vw;
+        height: 1vh;
+    }
+    .products{
+        width: 30%;
+        height: 22vw;
+
+    }
+
+    .products i{
+        font-size: 12vw;
+        
+
+    }
+    .products p{
+        font-size: 2.6vw;
+        margin-top: 0;
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************** FOOTER DESIGN ***************************/
+
+
+
+.footerItem{
+    height: 17vh;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.footerTop{
+    height: 30%;
+    width: 50%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerTop a{
+    text-decoration: none;
+    /* color: white; */
+    font-size: 1.5vw;
+    padding: .2vh .2vh;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: .8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.footerTop a:hover{
+    background-color: #0067f7;
+}
+
+
+.footerTop a i{
+    color: black;
+    font-size: 1.3vw;
+}
+
+
+.footerMiddle{
+    height: 30%;
+    width: 50%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+}
+
+.footerMiddle ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.footerMiddle ul li{
+    list-style: none;
+
+}
+.footerMiddle ul li a{
+    text-decoration: none;
+    color: white;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: "Space Grotesk", sans-serif;
+    font-size: .8vw;
+    transition: .3s;
+}
+
+.footerMiddle ul li a:hover{
+    color: #0067f7;
+}
+
+
+.footerBottom {
+    width: 100%;
+    height: 25%;
+    background-color: black;
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerBottom p{
+    font-size: .8vw;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: "Space Grotesk", sans-serif;
+    color: white;
+}
+
+
+
+
+
+/* responsive footer */
+
+
+
+@media (max-width: 600px) {
+    .footerItem{
+        width: 100%;
+    }
+    .footerTop{
+        width: 100%;
+        gap: 1.3vw;
+        margin-top: 6vh;
+    }
+
+    .footerTop a i{
+        font-size: 4vw;
+
+    }
+    .footerMiddle{
+        width: 100%;
+    }
+    .footerMiddle ul li a{
+        font-size: 2.8vw;
+        
+    }
+    .footerBottom p{
+        font-size: 2.2vw;
+    
+    }
+}
